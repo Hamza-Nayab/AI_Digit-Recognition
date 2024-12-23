@@ -2,8 +2,8 @@ import tensorflow as tf
 
 # Load and preprocess the MNIST dataset
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
-x_train = tf.keras.utils.normalize(x_train.astype('float32'), axis=1)
-x_test = tf.keras.utils.normalize(x_test.astype('float32'), axis=1)
+x_train = tf.keras.utils.normalize(x_train, axis=1)
+x_test = tf.keras.utils.normalize(x_test, axis=1)
 
 # Define the model
 model = tf.keras.models.Sequential([
@@ -24,10 +24,10 @@ model.fit(x_train, y_train, epochs=3)
 
 # Save and load the model
 model.save('handwritten.keras')  
-#model = tf.keras.models.load_model('handwritten.keras')  
+model = tf.keras.models.load_model('handwritten.keras')  
 
 
 # Evaluate the model
-# loss, accuracy = model.evaluate(x_test, y_test)
-# print(f"Loss: {loss}")
-# print(f"Accuracy: {accuracy}")
+loss, accuracy = model.evaluate(x_test, y_test)
+print(f"Loss: {loss}")
+print(f"Accuracy: {accuracy}")
