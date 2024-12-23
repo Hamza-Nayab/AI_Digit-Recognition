@@ -31,8 +31,8 @@ while os.path.isfile(f"digits/{imgnum}.png"):
         print(f"Image {imgnum} is probably: {np.argmax(pred)}")
 
         # Display the image
-        plt.imshow(img[0], cmap=plt.cm.binary)
-        plt.show()
+        #plt.imshow(img[0], cmap=plt.cm.binary)
+        #plt.show()
 
     except Exception as e:  # Catch and print any errors
         print(f"Error processing image {imgnum}: {e}")

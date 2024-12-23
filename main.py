@@ -20,7 +20,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # Train the model
-model.fit(x_train, y_train, epochs=3)
+model.fit(x_train, y_train, epochs=10)
 
 # Save and load the model
 model.save('handwritten.keras')  
